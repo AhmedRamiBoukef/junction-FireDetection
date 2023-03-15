@@ -6,19 +6,6 @@ import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600) 
 model = YOLO("best.pt")
-capture = cv2.VideoCapture(0)
-
-
-from ultralytics import YOLO
-from ultralytics.yolo.v8.detect.predict import DetectionPredictor
-import imutils
-import cv2
-import serial
-
-ser = serial.Serial('/dev/ttyUSB0', 9600) 
-
-
-model = YOLO("best.pt")
 model.overrides['conf'] = 0.3
 model.overrides['iou'] = 0.45
 capture = cv2.VideoCapture(0)
@@ -34,6 +21,7 @@ while True:
     if names:
         print("Fire detected")
         print("return 1")
+
         data = 1
         ser.write(data.encode())
     else :
