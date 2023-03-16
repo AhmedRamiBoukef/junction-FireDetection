@@ -19,7 +19,7 @@ For more details : https://drive.google.com/file/d/1lVEwTyi3qJjpKUl9FuOVZMwXotjz
 
 ## Links
 
-link to Simulation : https://www.tinkercad.com/things/dQlWQdoAZTe-fantastic-jaban-migelo/editel?sharecode=ca4KtSN82vZNZ5OGM4QLJVcmGCNCfirHzD1sQWo8N3M
+link to Simulation : https://www.tinkercad.com/things/kGe8MnTZSjy-copy-of-copy-of-copy-of-fire-detection/editel?sharecode=ZnXVzWs_rE0CLgZ_GlaIsGjsvM1T95OPgz6LiOfc4aw
 
 link to video : https://drive.google.com/file/d/1lVEwTyi3qJjpKUl9FuOVZMwXotjzE7Gn/view?usp=sharing
 
