@@ -1,13 +1,14 @@
 
 # BlazeBlocker
 
-Our deep learning model is based on YOLO, a state-of-the-art object detection algorithm that is widely used for a range of computer vision tasks. In our case, we have fine-tuned the YOLO model specifically for fire detection, enabling it to identify fires with a high degree of accuracy.
+Our solution consists of an AI model that is trained to detect fires using visual images from a fixed camera. The camera has a fixed angle of 320 degrees and captures images of the environment at regular intervals. The AI model analyses these images in real-time to detect any signs of a fire.
 
-The model is capable of analyzing video feeds from a camera and detecting any instances of fire. When a fire is detected, the model draws a bounding box around the fire in the video feed, allowing the user to quickly identify the location of the fire.
+When the AI model detects a fire, it sends a signal to the Arduino board with the coordinates of the location of the fire. The Arduino board then uses this information to control two servos, one for dimX and one for dimY, to move the camera towards the exact location of the fire.
 
-In addition to detecting fires, the model is also capable of sending signals to an Arduino board. Specifically, when a fire is detected, the model sends a signal of 1 to the Arduino, indicating that action needs to be taken to suppress the fire. If no fire is detected, the signal sent is 0, indicating that there is no need for action.
+Once the camera is in position, the system activates a water pump to extinguish the fire. The water pump is controlled by the Arduino board and can be turned on and off as required. The system also has a safety feature where the water pump turns off automatically once the fire has been extinguished.
 
-We have fine-tuned the model using a large dataset of images and videos of fires in various environments and lighting conditions. By carefully labeling the data and training the model on it, we have achieved an accuracy of over 95%, meaning that the model is highly effective at detecting fires.
+In case multiple fires are detected simultaneously, an algorithm is implemented to prioritize the fires based on their size, location, and potential impact. The system selects the largest and most dangerous fire as the top priority and moves the camera and water pump to that location first. Once that fire is extinguished, the system moves on to the next fire in order of priority until all fires are extinguished.
+
 
 
 For more details : https://drive.google.com/file/d/1lVEwTyi3qJjpKUl9FuOVZMwXotjzE7Gn/view?usp=sharing
