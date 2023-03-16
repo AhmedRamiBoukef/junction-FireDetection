@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 from ultralytics.yolo.v8.detect.predict import DetectionPredictor
-import imutils
 import cv2
+import math
 
 model = YOLO("best.pt")
 model.overrides['conf'] = 0.3
@@ -28,7 +28,7 @@ while True:
                 square = (detections[i][2] - detections[i][0]) * (detections[i][3] - detections[i][1])
                 max = i
                 maxlist = detections[i]
-        h, w = image.shape[:2]
+        h, w = frame.shape[:2]
         cx = maxlist[0]
         cy = maxlist[1]
         angle_x = math.atan((cx - w / 2) * math.tan(math.radians(fov) / 2) / (w / 2))
@@ -41,7 +41,6 @@ while True:
         print("return 1")
     else :
         print("return 0")
-    frame = imutils.resize(res_plotted, width=640)
     cv2.imshow("result", frame)
     if cv2.waitKey(20) & 0xFF==ord('d'):
         break
