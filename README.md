@@ -5,7 +5,7 @@ Our solution consists of an AI model that is trained to detect fires using visua
 
 When the AI model detects a fire, it sends a signal to the Arduino board with the coordinates of the location of the fire. The Arduino board then uses this information to control two servos, one for dimX and one for dimY, to move the camera towards the exact location of the fire.
 
-Once the camera is in position, the system activates a water pump to extinguish the fire. The water pump is controlled by the Arduino board and can be turned on and off as required. The system also has a safety feature where the water pump turns off automatically once the fire has been extinguished.
+Once the camera is in position, the system activates a water pump to extinguish the fire. The water pump is controlled by the Arduino board and can be turned on and off as required. The system also has a safety feature where the water pump turns off automatically once the fire has been extinguished by receiving a 0 value from the AI model.
 
 In case multiple fires are detected simultaneously, an algorithm is implemented to prioritize the fires based on their size, location, and potential impact. The system selects the largest and most dangerous fire as the top priority and moves the camera and water pump to that location first. Once that fire is extinguished, the system moves on to the next fire in order of priority until all fires are extinguished.
 
